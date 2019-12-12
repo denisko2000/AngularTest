@@ -1,0 +1,30 @@
+<div class='music_list_container'>
+  <md-button class="md-raised" ng-click='close()'>Return</md-button>
+  <md-card class="card" ng-repeat='music in item.movies'>
+    <md-card-title>
+      <md-card-title-text>
+        <span ng-if='!edits[$index]' class="md-headline"><a target="_tab" href="{{music.link}}">{{music.name}}</a></span>
+        <input class="edit_inp" ng-if='edits[$index]' name="Name" ng-model="music.name">
+        <input class="edit_inp" ng-if='edits[$index]' name="Link" ng-model="music.link">
+        <md-button  ng-if='edits[$index]' ng-click='save($index)' class="md-raised md-warn save_btn">save</md-button>
+      </md-card-title-text>
+      <md-card-title-media>
+        <div class="md-media-sm card-media"></div>
+      </md-card-title-media>
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button ng-if='!edits[$index]' ng-click='delete($index)'>Delete</md-button>
+      <md-button ng-if='!edits[$index]' ng-click='edit($event,$index)'>Edit</md-button>
+    </md-card-actions>
+  </md-card>
+
+  <md-input-container class="md-block">
+    <label>Name</label>
+    <input name="Name" ng-model="name">
+  </md-input-container>
+  <md-input-container class="md-block">
+    <label>Link</label>
+    <input name="Link" ng-model="link">
+  </md-input-container>
+  <md-button ng-click='add()' class="md-raised md-warn">Add</md-button>
+</div>

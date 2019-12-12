@@ -1,0 +1,7 @@
+
+    <md-content class="md-padding albums_containner" layout-xs="column" layout="row">
+        <albums flex-xs flex-xl flex-gt-xs="50" layout="column" albums='$ctrl.albums' item='item' index='$index' ng-repeat="item in $ctrl.albums"> </albums>
+    </md-content>
+    <md-button class="md-primary md-raised create_album_btn" ng-click="$ctrl.showAdvanced($event)">
+            Create New
+    </md-button>
